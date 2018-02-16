@@ -1,6 +1,7 @@
 package com.caojm.common.utils.sequence;
 
-import java.util.Set;
+import org.springframework.stereotype.Component;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
@@ -11,6 +12,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * @author <a href="mailto:caojianmin@jd.com">caojianmin</a>
  * @create 2018/02/16 11:46
  */
+@Component
 public class SequenceNoLockUtil extends SequenceUtil {
 
     /**
@@ -43,20 +45,5 @@ public class SequenceNoLockUtil extends SequenceUtil {
                 | getWorkIdByIp() << Datacenter_Left       //数据中心部分
                 | sequence;                             //序列号部分
     }
-    public static void main(String[] args){
-        SequenceUtil sequenceUtil=new SequenceNoLockUtil();
-        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(10);
-        for (int i = 0; i < 10; i++) {
-            fixedThreadPool.execute(() -> {
-                while (true) {
-                    long l = sequenceUtil.nextId();
-                    boolean add = set.add(l);
-                    if (!add) {
-                        System.out.println(System.currentTimeMillis() + "  " + l + " : " + Long.toBinaryString(l));
-                        System.exit(0);
-                    }
-                }
-            });
-        }
-    }
+
 }

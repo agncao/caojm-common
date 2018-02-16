@@ -1,6 +1,7 @@
 package com.caojm.common.utils.sequence;
 
 import com.caojm.common.utils.SystemIpUtil;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Set;
 
@@ -42,7 +43,8 @@ public abstract class SequenceUtil {
      * 这里也可以手动指定每台实例的ID号；或者通过ZK的临时递增节点自动获取。
      * 固定值
      */
-    protected static final int pid = 3;   //TODO:在properties中配置
+    @Value("${util.sequence.datacenterId}")
+    protected Integer datacenterId;
 
     /**
      * 将二进制ip地址的后十位作为workId
