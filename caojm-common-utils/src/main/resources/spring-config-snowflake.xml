@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+    <bean id="sequenceSnowflakeWorkIdMap" class="java.util.HashMap">
+        <constructor-arg>
+            <map>
+                <!--设置机器ip-->
+                <entry key="${caojm.sequence.snowflake.workId.machine0}" value="199144"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+</beans>

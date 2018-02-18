@@ -1,9 +1,9 @@
-package com.caojm.common.utils.sequence;
+package com.caojm.common.utils.snowflake.impl;
 
+import com.caojm.common.utils.snowflake.SequenceUtil;
+import com.caojm.common.utils.snowflake.WorkerIdStrategy;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -23,7 +23,13 @@ public class SequenceNoLockUtil extends SequenceUtil {
     private static volatile long currentTimeMillis = System.currentTimeMillis() - StartTimestamp;
     private static volatile long lastTimeMillis = currentTimeMillis;
 
-    public long nextId() {
+    public long nextId(WorkerIdStrategy workerIdStrategy){
+        long workId=workerIdStrategy.getWorkerId();
+        return this.nextId(workId);
+    }
+
+    @Override
+    public long nextId(long workId) {
         long sequence;
         while (true) {
             if (lastTimeMillis == currentTimeMillis) {
@@ -39,11 +45,12 @@ public class SequenceNoLockUtil extends SequenceUtil {
             }
             lastTimeMillis = currentTimeMillis;
         }
-//        return (currentTimeMillis << 22) | (pid << 12) | sequence;
 
-        return (currentTimeMillis) << Timestmp_Left //时间戳部分
-                | getWorkIdByIp() << Datacenter_Left       //数据中心部分
+        long id= (currentTimeMillis) << Timestmp_Left //时间戳部分
+                | workId << Machine_Left       //数据中心部分
                 | sequence;                             //序列号部分
+
+        return id;
     }
 
 }

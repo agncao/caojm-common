@@ -1,4 +1,4 @@
-package com.caojm.common.utils.sequence;
+package com.caojm.common.utils.snowflake;
 
 /**
  * 机器ip数据类型转换
@@ -27,7 +27,7 @@ public class IPConvertor {
                 sb.append('.');
             }
         }
-        System.out.println("the ip string:"+sb);   //输出例如:5.128.122.10
+//        System.out.println("the ip string:"+sb);   //输出例如:5.128.122.10
         return sb.toString();
 
     }
@@ -40,13 +40,13 @@ public class IPConvertor {
             num += (Long.parseLong(str) << (i * 8));    //每次左移8位
             i--;
         }
-          System.out.println("convert ip to long:"+num);    //输出例如 92305930
+//          System.out.println("convert ip to long:"+num);    //输出例如 92305930
         return num;
     }
 
     public static String toBinary(long ip){
         String binaryIp = Long.toBinaryString(ip);
-        System.out.println("convert ip to binary:"+binaryIp);
+//        System.out.println("convert ip to binary:"+binaryIp);
         return binaryIp;
     }
 

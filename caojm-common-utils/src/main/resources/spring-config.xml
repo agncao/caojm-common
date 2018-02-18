@@ -13,5 +13,6 @@
 	</bean>
 
 	<import resource="classpath:spring-config-aop.xml" />
-   	
+	<import resource="classpath:spring-config-service.xml" />
+	<import resource="classpath:spring-config-snowflake.xml" />
 </beans>

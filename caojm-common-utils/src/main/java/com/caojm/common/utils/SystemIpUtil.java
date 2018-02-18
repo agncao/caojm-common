@@ -13,9 +13,8 @@ import java.util.Set;
  * Time: 上午9:51
  */
 public class SystemIpUtil {
-
     public static Set<String> getIp(){
-        Set<String> set = new HashSet<String>();
+        Set<String> set = new HashSet<>();
         try {
             for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
                 NetworkInterface intf = en.nextElement();

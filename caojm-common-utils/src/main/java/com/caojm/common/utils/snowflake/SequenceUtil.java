@@ -1,4 +1,4 @@
-package com.caojm.common.utils.sequence;
+package com.caojm.common.utils.snowflake;
 
 import com.caojm.common.utils.SystemIpUtil;
 import org.springframework.beans.factory.annotation.Value;
@@ -38,31 +38,6 @@ public abstract class SequenceUtil {
     protected final static long Datacenter_Left = Sequence_Bit + Machine_Bit;
     protected final static long Timestmp_Left = Datacenter_Left + Datacenter_Bit;
 
-    /**
-     * 进程。
-     * 这里也可以手动指定每台实例的ID号；或者通过ZK的临时递增节点自动获取。
-     * 固定值
-     */
-    @Value("${util.sequence.datacenterId}")
-    protected Integer datacenterId;
-
-    /**
-     * 将二进制ip地址的后十位作为workId
-     *
-     * @return
-     */
-    protected static long getWorkIdByIp(){
-        Set<String> ips =SystemIpUtil.getIp();
-        String ip = ips.toArray(new String[]{})[0];
-
-        long workId=-1;
-        //1、得到二进制字符串
-        String binaryIp=IPConvertor.toBinary(IPConvertor.toLong(ip));
-        binaryIp=binaryIp.substring(22);
-        System.out.println("后十位："+binaryIp);
-        workId = Long.valueOf(binaryIp,2);
-        return workId;
-    }
-
-    abstract public long nextId();
+    abstract public long nextId(WorkerIdStrategy workerIdStrategy);
+    abstract public long nextId(long workId);
 }

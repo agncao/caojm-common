@@ -1,4 +1,4 @@
-package com.caojm.common.utils.sequence;
+package com.caojm.common.utils.snowflake.impl;
 
 /**
  * 自增长id生成器
