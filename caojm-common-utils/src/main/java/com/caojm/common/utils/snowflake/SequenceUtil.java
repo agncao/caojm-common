@@ -1,10 +1,5 @@
 package com.caojm.common.utils.snowflake;
 
-import com.caojm.common.utils.SystemIpUtil;
-import org.springframework.beans.factory.annotation.Value;
-
-import java.util.Set;
-
 /**
  * 自增长生成器
  *
