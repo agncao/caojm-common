@@ -25,7 +25,6 @@ public class SimpleWorkerIdStrategy implements WorkerIdStrategy {
         //1、得到二进制字符串
         String binaryIp = IPConvertor.toBinary(IPConvertor.toLong(ip));
         binaryIp = binaryIp.substring(22);
-        System.out.println("后十位：" + binaryIp);
         workId = Long.valueOf(binaryIp, 2);
         return workId;
     }

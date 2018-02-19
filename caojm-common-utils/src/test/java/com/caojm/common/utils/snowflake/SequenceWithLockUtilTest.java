@@ -1,6 +1,7 @@
 package com.caojm.common.utils.snowflake;
 
 
+import com.caojm.common.utils.snowflake.impl.CustomizedWorkerIdStrategy;
 import com.caojm.common.utils.snowflake.impl.SequenceWithLockUtil;
 import com.caojm.common.utils.snowflake.impl.SimpleWorkerIdStrategy;
 import org.junit.Test;
@@ -24,10 +25,9 @@ public class SequenceWithLockUtilTest {
     @Resource
     SequenceWithLockUtil sequenceUtil;
     private static final int threadCount = 4;
-    private WorkerIdStrategy workerIdStrategy=new SimpleWorkerIdStrategy();
-//    private WorkerIdStrategy workerIdStrategy=new CustomizedWorkerIdStrategy();
+//    private WorkerIdStrategy workerIdStrategy=new SimpleWorkerIdStrategy();
+    private WorkerIdStrategy workerIdStrategy=new CustomizedWorkerIdStrategy();
 
-/*
     @Test
     public void nextId(){
         long startTime=System.currentTimeMillis();
@@ -36,9 +36,8 @@ public class SequenceWithLockUtilTest {
         try {
             int k=0;
             while (k<100000) {
-                System.out.println("sequenceUtil.nextId() beginning...");
                 long id = sequenceUtil.nextId(workId);
-                System.out.println("id="+id);
+//                System.out.println("id="+id);
                 k++;
             }
         }catch (Exception e){
@@ -48,7 +47,6 @@ public class SequenceWithLockUtilTest {
         System.out.println(String.format("Testing run over! consuming %d millisecond",System.currentTimeMillis()-startTime));
         System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
     }
-*/
 
 
     @Test
