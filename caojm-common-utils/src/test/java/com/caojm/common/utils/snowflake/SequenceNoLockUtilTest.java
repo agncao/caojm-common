@@ -1,6 +1,7 @@
 package com.caojm.common.utils.snowflake;
 
 
+import com.caojm.common.utils.snowflake.impl.CustomizedWorkerIdStrategy;
 import com.caojm.common.utils.snowflake.impl.SequenceNoLockUtil;
 import com.caojm.common.utils.snowflake.impl.SimpleWorkerIdStrategy;
 import org.junit.Test;
