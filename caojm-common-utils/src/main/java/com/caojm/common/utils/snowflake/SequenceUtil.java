@@ -3,7 +3,7 @@ package com.caojm.common.utils.snowflake;
 /**
  * 自增长生成器
  *
- * @author <a href="mailto:caojianmin@jd.com">caojianmin</a>
+ * @author <a href="mailto:910922164@qq.com">caojianmin</a>
  * @create 2018/02/16 11:46
  */
 public abstract class SequenceUtil {

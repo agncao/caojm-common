@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author <a href="mailto:caojianmin@jd.com">caojianmin</a>
+ * @author <a href="mailto:910922164@qq.com">caojianmin</a>
  * @create 2018/02/16 13:15
  */
 @RunWith(SpringJUnit4ClassRunner.class)

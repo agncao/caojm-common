@@ -14,7 +14,7 @@ package com.caojm.common.utils.snowflake;
  * 从长整型到字符串的转化要点：移位、屏蔽掉不需要的位，字符串拼接。
  * 从字符串到长整型的转化要点：解析字符串，移位，求和。
  *
- * @author <a href="mailto:caojianmin@jd.com">caojianmin</a>
+ * @author <a href="mailto:910922164@qq.com">caojianmin</a>
  * @create 2018/02/15 18:16
  */
 public class IPConvertor {

@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * 简单策略，以ip的二进制表示法的后十位作为workid
  *
- * @author <a href="mailto:caojianmin@jd.com">caojianmin</a>
+ * @author <a href="mailto:910922164@qq.com">caojianmin</a>
  * @create 2018/02/17 22:51
  */
 public class SimpleWorkerIdStrategy implements WorkerIdStrategy {
