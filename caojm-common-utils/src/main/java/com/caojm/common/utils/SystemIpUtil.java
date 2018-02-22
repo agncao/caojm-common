@@ -8,9 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * User: bjshijianwei
- * Date: 13-4-8
- * Time: 上午9:51
+ * 得到局域网ip
  */
 public class SystemIpUtil {
     public static Set<String> getIp(){
