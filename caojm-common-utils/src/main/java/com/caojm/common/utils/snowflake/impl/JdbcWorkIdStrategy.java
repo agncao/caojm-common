@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * 利用数据库的自增长机制来得到sequence
  *
- * @author <a href="mailto:caojianmin@jd.com">caojianmin</a>
+ * @author <a href="mailto:910922164@qq.com">caojianmin</a>
  * @create 2018/02/22 17:23
  */
 @Component
