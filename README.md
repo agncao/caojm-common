@@ -2,7 +2,7 @@
 工具包
 
 ## common/utils/snowflake 自增长id
-* 使用方法
+* 使用方法 <br/>
     *参见测试用例SequenceWithLockUtilTest或者SequenceNoLockUtilTest*
 ```  
     @Resource
