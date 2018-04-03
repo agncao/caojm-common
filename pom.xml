@@ -11,6 +11,7 @@
 
   <modules>
     <module>caojm-common-utils</module>
+      <module>caojm-course-learning</module>
   </modules>
 
   <properties>
